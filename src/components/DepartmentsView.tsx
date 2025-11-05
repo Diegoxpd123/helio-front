@@ -17,13 +17,11 @@ import {
 } from 'antd';
 import type { TableColumnType } from 'antd';
 import {
-  SearchOutlined,
   PlusOutlined,
   UploadOutlined,
   DownloadOutlined,
   QuestionCircleFilled,
   BellFilled,
-  UserOutlined,
   DownOutlined,
   FileTextFilled,
   EditOutlined,
@@ -32,7 +30,7 @@ import {
   CloseOutlined,
 } from '@ant-design/icons';
 import { departmentsApi } from '../services/api';
-import type { Department, DepartmentFilters } from '../services/api';
+import type { Department } from '../services/api';
 import './DepartmentsView.css';
 
 const { Header, Content } = Layout;
