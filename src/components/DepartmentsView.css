@@ -619,31 +619,29 @@
     font-size: 12px;
   }
 
-  /* Pagination responsive */
+  /* Pagination responsive - mantener horizontal */
   .departments-card .ant-pagination {
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
     padding: 12px 0;
     align-items: center;
+    justify-content: space-between;
   }
 
   .departments-card .ant-pagination-total-text {
-    text-align: center;
-    width: 100%;
-    order: 1;
+    flex: 1 1 100%;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 12px;
   }
 
   .departments-card .ant-pagination-options {
-    order: 2;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-left: 0 !important;
+    margin-left: auto !important;
   }
 
   .departments-card .ant-pagination-options .ant-pagination-options-size-changer {
-    width: 100%;
-    max-width: 200px;
+    width: auto;
   }
 
   .departments-card .ant-pagination > li {
@@ -770,10 +768,16 @@
     font-size: 11px;
   }
 
-  /* Pagination extra small */
+  /* Pagination extra small - mantener horizontal */
   .departments-card .ant-pagination {
     padding: 10px 0;
-    gap: 10px;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .departments-card .ant-pagination-total-text {
+    font-size: 11px;
+    margin-bottom: 6px;
   }
 
   .departments-card .ant-pagination .ant-pagination-item,
@@ -783,10 +787,12 @@
     height: 28px;
     line-height: 28px;
     font-size: 11px;
+    margin: 0 1px;
   }
 
-  .departments-card .ant-pagination-total-text {
-    font-size: 12px;
+  .departments-card .ant-pagination .ant-pagination-jump-prev,
+  .departments-card .ant-pagination .ant-pagination-jump-next {
+    min-width: 24px;
   }
 
   .departments-card .ant-select-selector {
@@ -795,7 +801,7 @@
 
   .departments-card .ant-select-selection-item {
     line-height: 30px !important;
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 
