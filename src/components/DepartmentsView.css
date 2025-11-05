@@ -337,8 +337,12 @@
 
 /* Tablet - 768px a 1023px */
 @media (max-width: 1023px) and (min-width: 768px) {
-  .content {
-    padding: 20px;
+  .header {
+    padding: 16px 20px;
+  }
+
+  .logo-image {
+    height: 32px;
   }
 
   .header-left {
@@ -349,12 +353,33 @@
     gap: 16px;
   }
 
+  .nav-item {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
   .header-right {
     gap: 16px;
   }
 
+  .header-icon {
+    font-size: 18px;
+  }
+
+  .user-name {
+    font-size: 13px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
   .content-header {
     padding: 20px;
+  }
+
+  .content-header h1 {
+    font-size: 26px;
   }
 
   .tabs-section {
@@ -362,23 +387,59 @@
     gap: 12px;
   }
 
+  .tab {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
   .action-buttons {
     margin-top: 8px;
+    gap: 10px;
   }
 
   .table-controls {
     flex-wrap: wrap;
     gap: 12px;
+    padding: 16px 0;
+  }
+
+  .view-options button {
+    padding: 6px 16px;
   }
 
   .search-section {
     width: 100%;
     justify-content: flex-end;
   }
+
+  .columns-select {
+    width: 140px !important;
+  }
+
+  .departments-card .ant-table-thead > tr > th {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .departments-card .ant-table-tbody > tr > td {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .departments-card .ant-pagination {
+    padding: 14px 0;
+  }
+
+  .departments-card .ant-pagination .ant-pagination-item,
+  .departments-card .ant-pagination .ant-pagination-prev,
+  .departments-card .ant-pagination .ant-pagination-next {
+    font-size: 13px;
+  }
 }
 
 /* Mobile - menos de 768px */
 @media (max-width: 767px) {
+  /* Header responsive */
   .header {
     flex-direction: column;
     height: auto;
@@ -401,34 +462,64 @@
     width: 100%;
     flex-direction: column;
     gap: 8px;
+    overflow-x: auto;
+    display: flex;
   }
 
   .nav-item {
     width: 100%;
-    padding: 8px 12px;
+    padding: 10px 12px;
+    font-size: 14px;
+    text-align: left;
+    white-space: nowrap;
   }
 
   .header-right {
     width: 100%;
     justify-content: space-between;
-    gap: 12px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .header-icon {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .notification-icon {
+    position: relative;
+  }
+
+  .notification-badge {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
   }
 
   .user-avatar {
     flex: 1;
     justify-content: flex-end;
+    min-width: auto;
   }
 
   .user-name {
     display: none;
   }
 
+  .avatar-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  /* Content responsive */
   .content {
     padding: 12px;
   }
 
   .content-header {
     padding: 16px;
+    border-radius: 8px 8px 0 0;
   }
 
   .content-header h1 {
@@ -445,28 +536,53 @@
   .tabs {
     width: 100%;
     overflow-x: auto;
+    display: flex;
+    gap: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    font-size: 14px;
+    flex-shrink: 0;
+    min-width: 120px;
   }
 
   .action-buttons {
     width: 100%;
     justify-content: flex-start;
     padding-bottom: 0;
+    gap: 8px;
+    flex-wrap: wrap;
   }
 
+  .action-buttons button {
+    flex: 0 1 auto;
+  }
+
+  /* Table controls responsive */
   .table-controls {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
+    padding: 12px 0;
   }
 
   .view-options {
     width: 100%;
+    justify-content: center;
+  }
+
+  .view-btn-left,
+  .view-btn-right {
+    flex: 1;
+    padding: 8px 16px;
   }
 
   .search-section {
     width: 100%;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .search-section .columns-select,
@@ -474,36 +590,117 @@
     width: 100% !important;
   }
 
+  .columns-select {
+    height: 40px;
+  }
+
+  /* Table responsive */
+  .departments-card {
+    overflow-x: auto;
+  }
+
   .departments-card .ant-table {
     font-size: 12px;
+    min-width: 800px;
   }
 
   .departments-card .ant-table-thead > tr > th {
-    padding: 8px 4px;
-    font-size: 12px;
+    padding: 10px 6px;
+    font-size: 11px;
+    white-space: nowrap;
   }
 
   .departments-card .ant-table-tbody > tr > td {
-    padding: 8px 4px;
+    padding: 10px 6px;
     font-size: 12px;
   }
 
+  .departments-card .ant-table-tbody > tr > td strong {
+    font-size: 12px;
+  }
+
+  /* Pagination responsive */
   .departments-card .ant-pagination {
     flex-direction: column;
     gap: 12px;
+    padding: 12px 0;
+    align-items: center;
   }
 
   .departments-card .ant-pagination-total-text {
     text-align: center;
+    width: 100%;
+    order: 1;
+  }
+
+  .departments-card .ant-pagination-options {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 0 !important;
+  }
+
+  .departments-card .ant-pagination-options .ant-pagination-options-size-changer {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .departments-card .ant-pagination > li {
+    margin: 0 2px;
+  }
+
+  .departments-card .ant-pagination .ant-pagination-item,
+  .departments-card .ant-pagination .ant-pagination-prev,
+  .departments-card .ant-pagination .ant-pagination-next {
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 12px;
+  }
+
+  .departments-card .ant-pagination .ant-pagination-jump-prev,
+  .departments-card .ant-pagination .ant-pagination-jump-next {
+    min-width: 28px;
   }
 }
 
 /* Mobile pequeño - menos de 480px */
 @media (max-width: 479px) {
+  /* Header extra small */
   .header {
-    padding: 8px;
+    padding: 10px;
   }
 
+  .logo-image {
+    height: 26px;
+  }
+
+  .nav-item {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .header-icon {
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  .notification-badge {
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
+    top: 0;
+    right: 0;
+  }
+
+  .avatar-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  /* Content extra small */
   .content {
     padding: 8px;
   }
@@ -514,30 +711,90 @@
 
   .content-header h1 {
     font-size: 20px;
+    margin-bottom: 10px;
   }
 
   .tab {
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 13px;
+    min-width: 100px;
+  }
+
+  .action-buttons {
+    gap: 6px;
   }
 
   .action-buttons button {
-    padding: 4px 8px;
+    padding: 6px 10px;
+    font-size: 13px;
   }
 
-  .header-icon {
-    font-size: 16px;
+  .action-buttons .ant-btn-icon-only {
+    padding: 6px;
   }
 
-  .notification-badge {
-    width: 14px;
-    height: 14px;
-    font-size: 9px;
+  /* Table controls extra small */
+  .table-controls {
+    padding: 10px 0;
+    gap: 10px;
   }
 
-  .avatar-circle {
-    width: 28px;
+  .view-btn-left,
+  .view-btn-right {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .search-section {
+    gap: 8px;
+  }
+
+  .columns-select {
+    height: 36px;
+    font-size: 13px;
+  }
+
+  /* Table extra small */
+  .departments-card .ant-table {
+    font-size: 11px;
+    min-width: 700px;
+  }
+
+  .departments-card .ant-table-thead > tr > th {
+    padding: 8px 4px;
+    font-size: 10px;
+  }
+
+  .departments-card .ant-table-tbody > tr > td {
+    padding: 8px 4px;
+    font-size: 11px;
+  }
+
+  /* Pagination extra small */
+  .departments-card .ant-pagination {
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .departments-card .ant-pagination .ant-pagination-item,
+  .departments-card .ant-pagination .ant-pagination-prev,
+  .departments-card .ant-pagination .ant-pagination-next {
+    min-width: 28px;
     height: 28px;
+    line-height: 28px;
+    font-size: 11px;
+  }
+
+  .departments-card .ant-pagination-total-text {
+    font-size: 12px;
+  }
+
+  .departments-card .ant-select-selector {
+    height: 32px !important;
+  }
+
+  .departments-card .ant-select-selection-item {
+    line-height: 30px !important;
     font-size: 12px;
   }
 }
