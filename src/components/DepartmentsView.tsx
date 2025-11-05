@@ -28,6 +28,8 @@ import {
   FileTextFilled,
   EditOutlined,
   DeleteOutlined,
+  MenuOutlined,
+  CloseOutlined,
 } from '@ant-design/icons';
 import { departmentsApi } from '../services/api';
 import type { Department, DepartmentFilters } from '../services/api';
@@ -54,6 +56,11 @@ const DepartmentsView = () => {
   const [form] = Form.useForm();
   const [expandedRowKeys, setExpandedRowKeys] = useState<number[]>([]);
   const [subdepartmentsData, setSubdepartmentsData] = useState<Record<number, Department[]>>({});
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   const fetchDepartments = async () => {
     setLoading(true);
@@ -305,17 +312,20 @@ const DepartmentsView = () => {
           <div className="logo">
             <img src="/fc1e243d42adae1dce02bc51bf93aa48854c8014.png" alt="Logo" className="logo-image" />
           </div>
-          <nav className="nav-menu">
-            <a href="#" className="nav-item">
+          <button className="hamburger-menu" onClick={toggleMobileMenu}>
+            {mobileMenuOpen ? <CloseOutlined /> : <MenuOutlined />}
+          </button>
+          <nav className={`nav-menu ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+            <a href="#" className="nav-item" onClick={() => setMobileMenuOpen(false)}>
               Dashboard
             </a>
-            <a href="#" className="nav-item active">
+            <a href="#" className="nav-item active" onClick={() => setMobileMenuOpen(false)}>
               Organización
             </a>
-            <a href="#" className="nav-item">
+            <a href="#" className="nav-item" onClick={() => setMobileMenuOpen(false)}>
               Modelos <DownOutlined style={{ fontSize: '10px', marginLeft: '4px' }} />
             </a>
-            <a href="#" className="nav-item">
+            <a href="#" className="nav-item" onClick={() => setMobileMenuOpen(false)}>
               Seguimiento <DownOutlined style={{ fontSize: '10px', marginLeft: '4px' }} />
             </a>
           </nav>
@@ -334,6 +344,7 @@ const DepartmentsView = () => {
           </div>
         </div>
       </Header>
+      {mobileMenuOpen && <div className="mobile-menu-overlay" onClick={toggleMobileMenu}></div>}
 
       <Content className="content">
         <div className="content-header">
